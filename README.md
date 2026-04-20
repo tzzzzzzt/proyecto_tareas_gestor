@@ -1,1 +1,0 @@
-# proyecto_tareas_gestor

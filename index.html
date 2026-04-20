@@ -4,8 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <header>
+        <img src="assets/img/logo.png">
+        <h1>Gestor de Tareas</h1>
+    </header>
+
+    <label for="descripcion">Descripción:</label>  
+    <textarea id="descripcion" required></textarea>  
     
+    <label for="prioridad">Prioridad:</label>  
+    <select id="prioridad" required>  
+        <option value="">Seleccionar...</option>  
+        <option value="alta">Alta</option>  
+        <option value="media">Media</option>  
+        <option value="baja">Baja</option>  
+    </select>  
+    
+    <label for="fecha">Fecha límite:</label>  
+    <input type="date" id="fecha" required>  
+    
+    <button type="submit" onclick="funcHola()">Agregar Tarea</button>  
+
+
+    <div class="columna" id="en-progreso">  
+        <h3>En Progreso <span class="contador">0</span></h3>  
+        <div class="tareas-container"></div>  
+    </div>  
+ 
+    <div class="columna" id="completadas">  
+        <h3>Completadas <span class="contador">0</span></h3>  
+        <div class="tareas-container"></div>  
+    </div>  
+
+     <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+</canvas> 
 </body>
+
+<footer>Contacto: Mauricio Inostroza Nain <div>Correo: minostroza2025@alu.uct.cl</div> </footer>
+
+<script src="assets/js/script.js"></script>
 </html>

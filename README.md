@@ -1,5 +1,4 @@
 
-```markdown
 # 📋 Evaluación N°2 - Proyecto Tareas Gestor
 
 > Aplicación web de gestión de tareas con tablero Kanban (3 columnas), desarrollada como proyecto práctico de Diseño, Estilización e Interactividad Web.
@@ -19,7 +18,6 @@
 
 ## 🗂️ Estructura del proyecto
 
-```
 proyecto_tareas_gestor/
 ├── index.html
 ├── README.md
@@ -35,7 +33,7 @@ proyecto_tareas_gestor/
 │   └── fonts/
 └── docs/
     └── uso_ia.md
-```
+
 
 ---
 
@@ -51,7 +49,7 @@ proyecto_tareas_gestor/
 
 ## 📝 Formulario requerido
 
-```html
+html
 <label for="descripcion">Descripción:</label>
 <textarea id="descripcion" required></textarea>
 
@@ -67,13 +65,13 @@ proyecto_tareas_gestor/
 <input type="date" id="fecha" required>
 
 <button type="submit">Agregar Tarea</button>
-```
+
 
 ---
 
 ## 📊 Tablero Kanban (2 columnas base)
 
-```html
+html
 <div class="columna" id="en-progreso">
     <h3>En Progreso <span class="contador">0</span></h3>
     <div class="tareas-container"></div>
@@ -83,7 +81,7 @@ proyecto_tareas_gestor/
     <h3>Completadas <span class="contador">0</span></h3>
     <div class="tareas-container"></div>
 </div>
-```
+
 
 > 📚 Fuente: [Medium - Construyo un Kanban Board](https://medium.com/@thianlopezz/construyo-un-kanban-board-en-vanilla-javascript-react-angular-y-flutter-parte-1-85b235fe526c)
 
@@ -91,7 +89,7 @@ proyecto_tareas_gestor/
 
 ## 🎨 CSS - Variables obligatorias
 
-```css
+css
 :root {
     /* Colores principales */
     --color-primario: #2563eb;
@@ -113,7 +111,7 @@ proyecto_tareas_gestor/
     --espacio-md: 1.5rem;
     --espacio-lg: 2rem;
 }
-```
+
 
 ### Checklist CSS obligatorio
 
@@ -154,7 +152,7 @@ Checklist `docs/uso_ia.md`:
 
 ## 🚀 Configuración inicial rápida
 
-```bash
+``bash
 # 1. Crear estructura de carpetas
 mkdir -p proyecto_tareas_gestor/assets/{css,js,img,fonts}
 mkdir proyecto_tareas_gestor/docs
@@ -175,7 +173,7 @@ git add .
 git commit -m "Estructura inicial del proyecto"
 git branch -M main
 git push -u origin main
-```
+
 
 ---
 
@@ -201,8 +199,3 @@ git push -u origin main
 | `logo.png` | `assets/img/` |
 | `favicon.ico` | `assets/img/` |
 | `uso_ia.md` | `docs/` |
-
----
-
-**¡Buena suerte! 🍀**
-```

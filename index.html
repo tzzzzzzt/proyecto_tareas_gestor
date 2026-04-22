@@ -8,39 +8,42 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
+<header>
         <img src="assets/img/logo.png">
         <h1>Gestor de Tareas</h1>
-    </header>
-    <form id="tareaForm" class="tarea-form">
-    <label for="descripcion">Descripción:</label>  
-    <textarea id="descripcion" required></textarea>  
-    
-    <label for="prioridad">Prioridad:</label>  
+    </header>   
+    <form id="gestortareas">
+    <main>
+    <label for="descripcion">Descripción Tarea:</label><br><br>  
+    <textarea id="descripcion" required></textarea><br><br>  
+    <label for="prioridad">Prioridad:</label><br><br>  
     <select id="prioridad" required>  
-        <option value="">Seleccionar...</option>  
+        <option value="">Seleccionar</option>  
         <option value="alta">Alta</option>  
         <option value="media">Media</option>  
         <option value="baja">Baja</option>  
-    </select>  
+    </select><br><br>  
+    <label for="fecha">Fecha límite:</label><br><br>  
+    <input type="date" id="fecha" required><br><br><br>  
+ 
+    <button id="btn-agregar" onclick="agregarTarea()" type="submit">Agregar Tarea</button>
+    </main><br>
     
-    <label for="fecha">Fecha límite:</label>  
-    <input type="date" id="fecha" required>  <br>
-    
-    <button type="submit" class="btn-submit">Agregar Tarea</button>
+    <aside class="columna" id="pendientes">  
+    <h3>Pendientes <span class="contador">0</span></h3>  
+    <div class="tareas-container"></div>
+
+    </aside><br>
+
+    <aside class="columna" id="completadas">  
+    <h3>Completadas <span class="contador">0</span></h3>  
+    <div class="tareas-container"></div>
+
+    </aside>
     </form>  
 
-<div class="containers">
-    <div class="columna" id="en-progreso">  
-        <h3>En Progreso <span class="contador" id="contarprog">0</span></h3>  
-        <div class="tareas-container"></div>  
-    </div>  
- 
-    <div class="columna" id="completadas">  
-        <h3>Completadas <span class="contador" id="contarcom">0</span></h3>  
-        <div class="tareas-container"></div>  
-    </div> 
-</div>
+    <script src="/assets/js/script.js"></script>
+
 </body>
 
 <footer>Nombre: Mauricio Inostroza Nain <div>Correo: minostroza2025@alu.uct.cl</div> </footer>

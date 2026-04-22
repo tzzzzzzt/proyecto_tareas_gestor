@@ -1,26 +1,3 @@
-        :root {
-            /* Colores principales */
-            --color-primario: #2563eb;
-            --color-secundario: #7c3aed;
-            --color-terciario: #10b981;
-            /* Colores de estado */
-            --color-pendiente: #3b82f6;
-            --color-progreso: #f59e0b;
-            --color-completado: #10b981;
-            /* Tipografía */
-            --fuente-principal: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
-            --tamano-base: 16px;
-            /* Espaciado */
-            --espacio-xs: 0.5rem;
-            --espacio-sm: 1rem;
-            --espacio-md: 1.5rem;
-            --espacio-lg: 2rem;
-            /* sombras y bordes */
-            --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.05);
-            --sombra-hover: 0 8px 20px rgba(0, 0, 0, 0.1);
-            --radio-borde: 12px;
-            --radio-tarjeta: 10px;
-        }
 
 *{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -81,4 +58,9 @@ footer{
     display: flex;
 
 
+}
+
+
+button:hover {
+    transform: scale(1.05);
 }

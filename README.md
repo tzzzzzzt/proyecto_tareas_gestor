@@ -1,7 +1,7 @@
 
 # 📋 Evaluación N°2 - Proyecto Tareas Gestor
 
-> Aplicación web de gestión de tareas con tablero Kanban (3 columnas), desarrollada como proyecto práctico de Diseño, Estilización e Interactividad Web.
+Aplicación web de gestión de tareas con tablero Kanban (3 columnas), desarrollada como proyecto práctico de Diseño, Estilización e Interactividad Web.
 
 ---
 
@@ -12,7 +12,7 @@
 | Entrega dentro de plazo | 21 de abril de 2026 / 23:59 hrs. |
 | Plazo máximo (fuera de plazo) | 22 de abril de 2026 / 23:59 hrs. |
 
-> ⚠️ No se reciben entregas después del 22/04. Certificado médico necesario para evaluación pendiente.
+⚠️ No se reciben entregas después del 22/04. Certificado médico necesario para evaluación pendiente.
 
 ---
 
@@ -49,7 +49,6 @@ proyecto_tareas_gestor/
 
 ## 📝 Formulario requerido
 
-html
 <label for="descripcion">Descripción:</label>
 <textarea id="descripcion" required></textarea>
 
@@ -71,7 +70,6 @@ html
 
 ## 📊 Tablero Kanban (2 columnas base)
 
-html
 <div class="columna" id="en-progreso">
     <h3>En Progreso <span class="contador">0</span></h3>
     <div class="tareas-container"></div>

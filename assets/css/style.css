@@ -1,30 +1,56 @@
+:root {
+
+/* Colores principales */
+
+--color-primario: #2563eb;
+
+--color-secundario: #7c3aed;
+
+--color-terciario: #10b981;
+
+/* Colores de estado */  
+--color-pendiente: #3b82f6;  
+--color-progreso: #f59e0b;  
+--color-completado: #10b981;  
+ 
+/* Tipografía */  
+--fuente-principal: 'Segoe UI', system-ui, sans-serif;  
+--tamano-base: 16px;  
+ 
+/* Espaciado */  
+--espacio-xs: 0.5rem;  
+--espacio-sm: 1rem;  
+--espacio-md: 1.5rem;  
+--espacio-lg: 2rem;  
+
+}
 
 *{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16px;
+    font-family: var(--fuente-principal);
+    font-size: var(--tamano-base);
     text-align: center;
 }
 
 img {
     width: 60px;
-    float: left;
+    display: float;
 }
 
 
 
 h1{
     font-size: 50px;
-    color:#2563eb
+    color:var(--color-primario);
 }
 
 header{
-    display: flexbox;
     align-items: center;
     text-align: center;
+
 }
 
 button{
-    background-color:  #2563eb;
+    background-color:  var(--color-primario);
     border-radius: 10px;
     color: white;
     height: 40px;
@@ -34,7 +60,15 @@ button{
 }
 
 footer{
+    margin-top: 20px;
     color: #7c3aed;
+    height: 60px;
+    border: solid #2563eb;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+
 }
 
 
@@ -44,19 +78,41 @@ footer{
     padding: 15px;
     width: 300px;
     min-height: 400px;
-    border: solid #2563eb;
     margin-right: auto;
     margin-left: auto;
 
 }
 
-.containers{
+.container{
     display: flex;
 
 
+
+}
+
+.form {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 700px;
+    min-height: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    border: solid var(--color-primario);
+     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+#pendientes{
+    border: solid var(--color-pendiente);
+}
+
+#completadas{
+    border: solid var(--color-completado);
 }
 
 
 button:hover {
     transform: scale(1.05);
+    background-color: var(--color-secundario);
 }

@@ -1,4 +1,5 @@
 let tareas = [];
+const tareasForm = document.getElementById("tareasform");
 
 function renderizarTarea(tarea) {
   const contenedor = document
@@ -23,6 +24,8 @@ function renderizarTarea(tarea) {
       <div class="tarea-fecha">Fecha: ${formatearFecha(tarea.fecha)}</div>
     </div>
     <button class="btn-eliminar" onclick="eliminarTarea(${tarea.id})">Eliminar Tarea</button>
+
+    <button class="btn-completada" onclick="completarTarea(${tarea.id})">Marcar como Completada</button>
   `;
 
   contenedor.appendChild(tarjeta);
@@ -41,25 +44,17 @@ function eliminarTarea(id) {
   }
 }
 
-document.getElementById("btn-progreso").addEventListener("click", function (e) {
-  e.preventDefault();
-  const contenedor = document
-    .getElementById("en-progreso")
-    .querySelector(".tareas-container");
-  contenedor.innerHTML = "";
-  actualizarContador("en-progreso");
-});
-
-document
-  .getElementById("btn-completadas")
-  .addEventListener("click", function (e) {
-    e.preventDefault();
-    const contenedor = document
-      .getElementById("completadas")
-      .querySelector(".tareas-container");
-    contenedor.innerHTML = "";
-    actualizarContador("completadas");
-  });
+function completarTarea(id) {
+  tareas = tareas.filter((t) => t.id !== id);
+  const tarjeta = document.querySelector(`.tarea-card[data-id="${id}"]`);
+  if (tarjeta) {
+    tarjeta.classList.add("completando");
+    setTimeout(() => {
+      tarjeta.remove();
+      actualizarContador("pendientes", "completada");
+    }, 300);
+  }
+}
 
 function actualizarContador(seccionId) {
   const seccion = document.getElementById(seccionId);
@@ -79,12 +74,12 @@ function formatearFecha(fechaISO) {
 }
 
 document
-  .getElementById("gestortareas")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
+  .getElementById("tareasform").addEventListener("submit", function (event) {
+    event.preventDefault();
+    agregarTarea();
   });
 
-function agregarTarea() {
+function agregarTarea() { //lee los datos dados y agrega la tarea en un array llamado "tarea"
   const descripcion = document.getElementById("descripcion").value.trim();
   const prioridad = document.getElementById("prioridad").value;
   const fecha = document.getElementById("fecha").value;

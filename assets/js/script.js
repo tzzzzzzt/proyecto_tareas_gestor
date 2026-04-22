@@ -1,10 +1,15 @@
 let tareas = [];
+let tareaspendientes = [];
+let tareascompletadas = [];
 const tareasForm = document.getElementById("tareasform");
 
 function renderizarTarea(tarea) {
-  const contenedor = document
+  const contenedorPend = document
     .getElementById("pendientes")
     .querySelector(".tareas-container");
+
+  const contenedorComp = document.getElementById("completadas")
+                      .querySelector(".tareas-container");
 
   const tarjeta = document.createElement("div");
   tarjeta.classList.add("tarea-card", `prioridad-${tarea.prioridad}`);
@@ -28,35 +33,34 @@ function renderizarTarea(tarea) {
     <button class="btn-completada" onclick="completarTarea(${tarea.id})">Marcar como Completada</button>
   `;
 
-  contenedor.appendChild(tarjeta);
-  actualizarContador("pendientes");
+  contenedorPend.appendChild(tarjeta);
+  actContador("pendientes");
 }
 
 function eliminarTarea(id) {
-  tareas = tareas.filter((t) => t.id !== id);
+  tareaspendientes = tareas.filter((t) => t.id !== id);
   const tarjeta = document.querySelector(`.tarea-card[data-id="${id}"]`);
   if (tarjeta) {
     tarjeta.classList.add("eliminando");
     setTimeout(() => {
       tarjeta.remove();
-      actualizarContador("pendientes");
+      actContador("pendientes");
     }, 300);
   }
 }
 
 function completarTarea(id) {
-  tareas = tareas.filter((t) => t.id !== id);
+  tareascompletadas = tareas.filter((t) => t.id !== id);
   const tarjeta = document.querySelector(`.tarea-card[data-id="${id}"]`);
-  if (tarjeta) {
-    tarjeta.classList.add("completando");
-    setTimeout(() => {
-      tarjeta.remove();
-      actualizarContador("pendientes", "completada");
-    }, 300);
-  }
-}
+  tareascompletadas.push(tarjeta);
+  contenedorPend.appendChild(tarjeta);
+  actContador("completadas");
 
-function actualizarContador(seccionId) {
+
+  }
+
+
+function actContador(seccionId) {
   const seccion = document.getElementById(seccionId);
   const cantidad = seccion.querySelectorAll(".tarea-card").length;
   seccion.querySelector(".contador").textContent = cantidad;
@@ -97,6 +101,7 @@ function agregarTarea() { //lee los datos dados y agrega la tarea en un array ll
   };
 
   tareas.push(tarea);
+  tareaspendientes.push(tarea);
   renderizarTarea(tarea);
   limpiarFormulario();
 }
